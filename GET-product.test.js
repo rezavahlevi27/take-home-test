@@ -70,12 +70,20 @@ describe("Get Product by Id", () => {
     expect(response.body).toHaveProperty("id", productId);
   });
 
-  test("Scenario: Verify invalid inputs products id", async () => {
+  test("Scenario: Verify Invalid endpoint (404)", async () => {
     const response = await request(baseURL).get(`/products/${productId}-${a}`);
 
     expect(response.body).toHaveProperty("message")
     console.log("Response Body:", response.body);
     expect(response.status).toBe(404);
     console.log("Response status:", response.status)
+  });
+
+  test("Scenario: Verify Invalid method (405)", async () => {
+    const response = await request(baseURL).post(`/products/${productId}`);
+
+    expect(response.status).toBe(405);
+    console.log("Response status:", response.status)
+    console.log("response body:", response.body)
   });
 });
