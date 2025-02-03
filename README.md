@@ -17,6 +17,19 @@ npm install
 3.Jalankan pengujian:
 npm test
 
+Pendekatan Pengujian
+-Pengujian Fungsional: Menggunakan Supertest untuk menguji setiap endpoint API secara langsung.
+-Pengujian Negatif: Menguji skenario input tidak valid untuk memastikan API menangani kesalahan dengan benar.
+-Validasi Respons: Memeriksa apakah respons API sesuai dengan ekspektasi, baik dari segi status kode maupun struktur data.
+-Automasi Pengujian: Menggunakan Jest sebagai test runner untuk menjalankan pengujian secara otomatis.
+
+Integrasi CI/CD
+-Continuous Integration (CI):
+Menggunakan GitHub Actions untuk menjalankan pengujian otomatis setiap kali ada perubahan kode.
+Memastikan tidak ada perubahan yang merusak fungsionalitas sebelum dideploy.
+-Continuous Deployment (CD):
+Setelah pengujian lulus, kode dapat langsung dideploy.
+
 Asumsi & Keputusan:
 -Endpoint API yang digunakan diasumsikan dapat diakses dan berfungsi dengan baik.
 -Kasus uji dibuat berdasarkan respons API yang diharapkan (kode status dan format body).
